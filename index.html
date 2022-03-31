@@ -5,24 +5,27 @@
     <title>Vibration API</title>
     <meta name="viewport" content="width=device-width">
     
+	<link rel="shortcut icon" href="/assets/favicon.ico">
+	
 </head>
 <body>
-    <h1>Vibration API</h1>
+    
+	<h1>Vibration API</h1>
+
+	<button class="button" onclick="vibrate(1000)">Pojedynczy alarm</button><br>
+	<button class="button" onclick="vibratePattern()">Graj piękny cyganie</button>
+
+
     <script>
-        //check for the different versions of the vibrate api
-        navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
-        
-        
-        if (navigator.vibrate) {
-            // vibration API supported
-            document.body.addEventListener('click', function(ev){
-                    console.log('body clicked. Time to shake.');
-                    //navigator.vibrate(1000);
-                    navigator.vibrate([500, 300, 100]);
-                    //navigator.vibrate(0);
-                });
-        }
-        
+    
+		function vibrate (ms) {
+			navigator.vibrate(ms);
+		}
+			navigator.vibrate([125,75,125,275,200,275,125,75,125,275,200,600,200,600]);
+		function vibratePattern(){
+		
+		}
+    
         
         James Bond Theme
         navigator.vibrate([200,100,200,275,425,100,200,100,200,275,425,100,75,25, 75,125,75,25,75,125,100,100]);
