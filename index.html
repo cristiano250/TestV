@@ -1,40 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Vibration API</title>
-    <meta name="viewport" content="width=device-width">
-    
-	<link rel="shortcut icon" href="/assets/favicon.ico">
-	
-</head>
+<html>
 <body>
-    
-	<h1>Vibration API</h1>
-
-	<button class="button" onclick="vibrate(1000)">Pojedynczy alarm</button><br>
-	<button class="button" onclick="vibratePattern()">Graj piękny cyganie</button>
-
-
-    <script>
-    
-		function vibrate (ms) {
-			navigator.vibrate(ms);
+	<h1>Welcome</h1>
+	<div>
+		<button id="vibrate" onclick="vibrate()">Vibrate</button>
+		<a href="description.html">Go next</a>
+	</div>
+	
+	<script>
+		function vibrate(){
+			if(navigator){
+				navigator.vibrate([2000,1000,3000])
+			}
 		}
-			navigator.vibrate([125,75,125,275,200,275,125,75,125,275,200,600,200,600]);
-		function vibratePattern(){
-		
-		}
-    
-        
-        James Bond Theme
-        navigator.vibrate([200,100,200,275,425,100,200,100,200,275,425,100,75,25, 75,125,75,25,75,125,100,100]);
-        /***
-		Super Mario Theme
-        navigator.vibrate([125,75,125,275,200,275,125,75,125,275,200,600,200,600]);
-        Darth Vader Theme
-        navigator.vibrate([500,110,500,110,450,110,200,110,170,40,450,110,200,110,170,41, 500]);
-        ***/
-    </script>
+	</script>
+
 </body>
 </html>
